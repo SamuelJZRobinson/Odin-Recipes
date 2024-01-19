@@ -2,7 +2,8 @@ body
 {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgba(0,0,0,85%);
+    color: rgba(255,255,255,75%);
+    background-color: #222;
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -10,16 +11,19 @@ body
 
 main
 {
-    padding: 0 200px;
+    padding: 32px 200px;
 }
 
 nav ul
 {
+    width: 100%;
+    position: fixed;
+    top: 0;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
-    background-color: #777;
+    background-color: #333;
 }
 
 nav ul li
@@ -32,7 +36,8 @@ nav ul li a
 {
     display: block;
     text-align: center;
-    padding: 8px 12px;
+    color: rgba(255,255,255,75%);
+    padding: 16px 12px;
     text-decoration: none;
 }
 
@@ -50,13 +55,37 @@ ul.dashed > li
 ul.dashed > li:before
 {
     list-style-type: none;
-    content: "▸ ";
-    text-indent: 20px;
+    content: "▸";
+    font-size: large;
+    color: orange;
+    display: inline-block;
+    width: 1.5em;
+}
+
+ol
+{
+    list-style: none;
+    counter-reset: li;
+}
+
+ol li::before
+{
+    content: counter(li);
+    color: orange;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1em;
+    counter-increment: li;
 }
 
 h1, h2, h3, h4, h5, h6
 {
     margin-bottom: 0;
+}
+
+a
+{
+    color: white;
 }
 
 ul, ol
@@ -67,4 +96,15 @@ ul, ol
 ol
 {
     margin-left: -1em;
+}
+
+figure
+{
+    margin: 0px;
+}
+
+figcaption
+{
+    font-size: small;
+    margin: 0px;
 }
