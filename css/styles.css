@@ -4,7 +4,7 @@ body
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgba(255,255,255,75%);
     background-color: #222;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
@@ -80,7 +80,22 @@ ol li::before
 
 h1, h2, h3, h4, h5, h6
 {
-    margin-bottom: 0;
+    margin-bottom: 4px;
+}
+
+h1
+{
+    font-size: 2.4rem;
+}
+
+h2
+{
+    font-size: 1.8rem;
+}
+
+p
+{
+    font-size: 1rem;
 }
 
 a
