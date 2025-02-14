@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav */
-header{
+header {
   position: sticky;
   top: 0;
   height: fit-content;
@@ -59,7 +59,7 @@ header{
   background-color: var(--default-bg);
 }
 
-nav{
+nav {
   display: inline-flex;
   align-items: center;
   gap: 1.5rem;
@@ -69,7 +69,7 @@ nav{
   border-bottom: 4px var(--primary-text) solid;
 }
 
-#logo a{
+#logo a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -78,15 +78,15 @@ nav{
   color: var(--primary-text)
 }
 
-#logo a .material-symbols-outlined{
+#logo a .material-symbols-outlined {
   font-size: 2.5rem;
 }
 
-.secondary-text{
+.secondary-text {
   color: var(--secondary-text);
 }
 
-nav ul{
+nav ul {
   display: inline-flex;
   gap: 1.5rem;
   list-style-type: none;
@@ -94,23 +94,22 @@ nav ul{
   padding: 0px;
 }
 
-nav ul li{
+nav ul li {
   width: fit-content;
   font-weight: 900;
   font-size: 1rem;
 }
 
-nav ul li a{
+nav ul li a {
   color: var(--primary-text)
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   color: var(--secondary-text);
 }
 
 /* Main */
-main
-{
+main {
   height: fit-content;
   min-height: 100vh;
   width: 100%;
@@ -118,7 +117,8 @@ main
   background-color: var(--default-bg);
 }
 
-#card-container{
+/* Card */
+#card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
   grid-template-rows: auto;
@@ -127,13 +127,13 @@ main
   width: 100%;
 }
 
-.card{
+.card {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-.card .info-bar{
+.card .info-bar {
   position: absolute;
   display: inline-flex;
   justify-content: flex-end;
@@ -145,7 +145,7 @@ main
   padding: 0.5rem;
 }
 
-.card .cook-time{
+.card .cook-time {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -157,7 +157,7 @@ main
   border-radius: 1rem;
 }
 
-.card img.thumbnail{
+.card img.thumbnail {
   width: 100%;
   height: 280px;
   object-fit: cover;
@@ -165,33 +165,74 @@ main
   
 }
 
-.card:hover{
+.card:hover {
   opacity: 70%;
   transition: all 0.4s ease-in-out
 }
 
-figcaption.title{
+figcaption.title {
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--primary-text);
 }
 
-figcaption.caption{
+figcaption.caption {
   font-size: 0.8rem;
   color: var(--primary-text);
 }
 
-.card a{
+.card a {
   color: var(--default-bg);
 }
 
-img.display{
+img.display {
   height: 420px;
   width: auto;
 }
 
+/* Lists */
+ul.dashed > li {
+  list-style-type: none;
+  margin-left: -2em;
+}
+
+ul.dashed > li:before {
+  list-style-type: none;
+  content: "▸";
+  font-size: large;
+  color: var(--primary-text);
+  display: inline-block;
+  width: 1.5em;
+}
+
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol li::before {
+  content: counter(li);
+  color: var(--primary-text);
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1em;
+  counter-increment: li;
+}
+
+h1, h2 {
+  color: var(--primary-text);
+}
+
+h2 {
+  margin-top: 1rem;
+}
+
+ol {
+    margin-left: -1em;
+}
+
 /* Footer */
-footer{
+footer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,47 +242,6 @@ footer{
   color: var(--default-bg);
 }
 
-footer #copyright{
+footer #copyright {
   font-size: 0.9rem;
-}
-
-/* Lists */
-ul.dashed > li{
-  list-style-type: none;
-  margin-left: -2em;
-}
-
-ul.dashed > li:before{
-  list-style-type: none;
-  content: "▸";
-  font-size: large;
-  color: var(--primary-text);
-  display: inline-block;
-  width: 1.5em;
-}
-
-ol{
-  list-style: none;
-  counter-reset: li;
-}
-
-ol li::before{
-  content: counter(li);
-  color: var(--primary-text);
-  display: inline-block;
-  width: 1.5em;
-  margin-left: -1em;
-  counter-increment: li;
-}
-
-h1, h2{
-  color: var(--primary-text);
-}
-
-h2{
-  margin-top: 1rem;
-}
-
-ol{
-    margin-left: -1em;
 }
