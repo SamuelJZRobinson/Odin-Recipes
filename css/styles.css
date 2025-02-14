@@ -1,126 +1,264 @@
-body
-{
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgba(255,255,255,75%);
-    background-color: #222;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+/* Uses joshwcomeau CSS Reset */
+/* Global */
+:root{
+  --primary-text: #1d518d;
+  --secondary-text: #d8a31a;
+  --black-text: rgba(0,0,0,85%);
+  --default-bg: white;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", serif;
+}
+
+/* Media */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Text */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Nav */
+header{
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--default-bg);
+}
+
+nav{
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  height: 5rem;
+  padding: 1rem 15%;
+  border-bottom: 4px var(--primary-text) solid;
+}
+
+#logo a{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--primary-text)
+}
+
+#logo a .material-symbols-outlined{
+  font-size: 2.5rem;
+}
+
+.secondary-text{
+  color: var(--secondary-text);
+}
+
+nav ul{
+  display: inline-flex;
+  gap: 1.5rem;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul li{
+  width: fit-content;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+nav ul li a{
+  color: var(--primary-text)
+}
+
+nav ul li a:hover{
+  color: var(--secondary-text);
+}
+
+/* Main */
 main
 {
-    height: 100%;
-    padding: 32px 200px;
+  height: fit-content;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1rem 15%;
+  background-color: var(--default-bg);
 }
 
-nav ul
-{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-    background-color: #333;
+#card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  height: fit-content;
+  width: 100%;
 }
 
-nav ul li
-{
-    display: inline;
-    float: left;
+.card{
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
-nav ul li a
-{
-    display: block;
-    text-align: center;
-    color: rgba(255,255,255,75%);
-    padding: 16px 12px;
-    text-decoration: none;
+.card .info-bar{
+  position: absolute;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
 }
 
-nav ul li a:hover
-{
-    background-color: #555;
+.card .cook-time{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: fit-content;
+  color: var(--black-text);
+  background-color: rgba(255, 255, 255, 70%);
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  border-radius: 1rem;
 }
 
-ul.dashed > li
-{
-    list-style-type: none;
-    margin-left: -2em;
+.card img{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  
 }
 
-ul.dashed > li:before
-{
-    list-style-type: none;
-    content: "▸";
-    font-size: large;
-    color: orange;
-    display: inline-block;
-    width: 1.5em;
+.card:hover{
+  opacity: 70%;
+  transition: all 0.4s ease-in-out
 }
 
-ol
-{
-    list-style: none;
-    counter-reset: li;
+
+figcaption.title{
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-text);
 }
 
-ol li::before
-{
-    content: counter(li);
-    color: orange;
-    display: inline-block;
-    width: 1.5em;
-    margin-left: -1em;
-    counter-increment: li;
+.card a{
+  color: var(--default-bg);
 }
 
-h1, h2, h3, h4, h5, h6
-{
+/* Footer */
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  width: 100%;
+  background-color: var(--primary-text);
+  color: var(--default-bg);
+}
+
+footer #copyright{
+  font-size: 0.9rem;
+}
+
+/* Lists */
+ul.dashed > li{
+  list-style-type: none;
+  margin-left: -2em;
+}
+
+ul.dashed > li:before{
+  list-style-type: none;
+  content: "▸";
+  font-size: large;
+  color: orange;
+  display: inline-block;
+  width: 1.5em;
+}
+
+ol{
+  list-style: none;
+  counter-reset: li;
+}
+
+ol li::before{
+  content: counter(li);
+  color: orange;
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1em;
+  counter-increment: li;
+}
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6{
     margin-bottom: 4px;
 }
 
-h1
-{
+h1{
     font-size: 2.4rem;
 }
 
-h2
-{
+h2{
     font-size: 1.8rem;
 }
 
-p
-{
+p{
     font-size: 1rem;
 }
 
-a
-{
-    color: white;
-}
-
-ul, ol
-{
+ul, ol{
     margin: 0;
 }
 
-ol
-{
+ol{
     margin-left: -1em;
 }
 
-figure
-{
+figure{
     margin: 0px;
 }
 
-figcaption
-{
+figcaption{
     font-size: small;
     margin: 0px;
 }
