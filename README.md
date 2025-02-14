@@ -1,10 +1,10 @@
 # odin-recipes
 Basic recipe website.
 
-Tech used:
+*Tech Used:*
 - HTML
 - CSS
 - No web frameworks
 
-Live demo:
+*Live Demo:*
 https://SamuelJZRobinson.github.io/Odin-Recipes
