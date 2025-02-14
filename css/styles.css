@@ -170,10 +170,14 @@ main
   transition: all 0.4s ease-in-out
 }
 
-
 figcaption.title{
   font-size: 1.25rem;
   font-weight: 500;
+  color: var(--primary-text);
+}
+
+figcaption.caption{
+  font-size: 0.8rem;
   color: var(--primary-text);
 }
 
@@ -206,7 +210,7 @@ ul.dashed > li:before{
   list-style-type: none;
   content: "▸";
   font-size: large;
-  color: orange;
+  color: var(--primary-text);
   display: inline-block;
   width: 1.5em;
 }
@@ -218,47 +222,21 @@ ol{
 
 ol li::before{
   content: counter(li);
-  color: orange;
+  color: var(--primary-text);
   display: inline-block;
   width: 1.5em;
   margin-left: -1em;
   counter-increment: li;
 }
 
-
-
-
-
-
-h1, h2, h3, h4, h5, h6{
-    margin-bottom: 4px;
-}
-
-h1{
-    font-size: 2.4rem;
+h1, h2{
+  color: var(--primary-text);
 }
 
 h2{
-    font-size: 1.8rem;
-}
-
-p{
-    font-size: 1rem;
-}
-
-ul, ol{
-    margin: 0;
+  margin-top: 1rem;
 }
 
 ol{
     margin-left: -1em;
-}
-
-figure{
-    margin: 0px;
-}
-
-figcaption{
-    font-size: small;
-    margin: 0px;
 }
