@@ -157,7 +157,7 @@ main
   border-radius: 1rem;
 }
 
-.card img{
+.card img.thumbnail{
   width: 100%;
   height: 280px;
   object-fit: cover;
@@ -183,6 +183,11 @@ figcaption.caption{
 
 .card a{
   color: var(--default-bg);
+}
+
+img.display{
+  height: 420px;
+  width: auto;
 }
 
 /* Footer */
