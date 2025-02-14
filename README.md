@@ -7,4 +7,4 @@ Basic recipe website.
 - No web frameworks
 
 *Live Demo:*
-https://SamuelJZRobinson.github.io/Odin-Recipes
+- https://SamuelJZRobinson.github.io/Odin-Recipes
