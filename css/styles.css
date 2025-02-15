@@ -78,8 +78,9 @@ nav {
   color: var(--primary-text)
 }
 
-#logo a .material-symbols-outlined {
-  font-size: 2.5rem;
+#logo img{
+  width: 3rem;
+  height: 3rem;
 }
 
 .secondary-text {
